@@ -3,7 +3,7 @@
 # Google Code Jam Farewell Round B - Problem B. Intruder Outsmarting
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad13d
 #
-# Time:  O(W * log(min(N, D)))
+# Time:  O(W * log(min(D, N)))
 # Space: O(1)
 #
 

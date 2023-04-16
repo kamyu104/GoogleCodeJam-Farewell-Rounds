@@ -1,4 +1,4 @@
-# [GoogleCodeJam Farewell Rounds](https://codingcompetitions.withgoogle.com/codejam/archive/2023) ![Language](https://img.shields.io/badge/language-Python3-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-6%20%2F%2020-ff69b4.svg) ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.googlecodejam.farewell.rounds)
+# [GoogleCodeJam Farewell Rounds](https://codingcompetitions.withgoogle.com/codejam/archive/2023) ![Language](https://img.shields.io/badge/language-Python3-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-7%20%2F%2020-ff69b4.svg) ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.googlecodejam.farewell.rounds)
 
 * Python solutions of Google Code Jam Farewell Rounds. Solution begins with `*` means it will get TLE in the largest data set.
 * Total computation amount > `10^8` is not friendly for Python to solve in 5 ~ 15 seconds.
@@ -18,11 +18,11 @@
 
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Colliding Encoding](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad7cf)| [Python 3](./Round%20A/colliding_encoding.py3)| _O(N)_ | _O(N)_ | Easy | | Hash Table |
-|B| [Illumination Optimization](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad086)| [Python 3](./Round%20A/illumination_optimization.py3) | _O(N)_ | _O(1)_ | Medium | | Greedy |
-|C| [Rainbow Sort](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cada38)| [Python 3](./Round%20A/rainbow_sort.py3)| _O(N)_ | _O(N)_ | Easy | | Hash Table |
-|D| [ASCII Art](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad9c2)| [Python 3](./Round%20A/ascii_art.py3) | _O(1)_ | _O(1)_ | Easy | | Math |
-|E| [Untie](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad9c1)| [Python 3](./Round%20A/untie.py3) | _O(N)_ | _O(1)_ | Medium | | Greedy |
+|A| [Colliding Encoding](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad7cf)| [Python3](./Round%20A/colliding_encoding.py3)| _O(N)_ | _O(N)_ | Easy | | Hash Table |
+|B| [Illumination Optimization](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad086)| [Python3](./Round%20A/illumination_optimization.py3) | _O(N)_ | _O(1)_ | Medium | | Greedy |
+|C| [Rainbow Sort](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cada38)| [Python3](./Round%20A/rainbow_sort.py3)| _O(N)_ | _O(N)_ | Easy | | Hash Table |
+|D| [ASCII Art](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad9c2)| [Python3](./Round%20A/ascii_art.py3) | _O(1)_ | _O(1)_ | Easy | | Math |
+|E| [Untie](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad9c1)| [Python3](./Round%20A/untie.py3) | _O(N)_ | _O(1)_ | Medium | | Greedy |
 
 ## Round B
 
@@ -30,8 +30,8 @@
 
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Collecting Pancakes](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad7d1)| [Python 3](./Round%20B/collecting_pancakes.py3)| _O(N)_ | _O(1)_ | Medium | | Greedy, Prefix Sum |
-|B| [Intruder Outsmarting](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad13d)| | | | | | |
+|A| [Collecting Pancakes](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad7d1)| [Python3](./Round%20B/collecting_pancakes.py3)| _O(N)_ | _O(1)_ | Medium | | Greedy, Prefix Sum |
+|B| [Intruder Outsmarting](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad13d)| [Python3](./Round%20B/intruder_outsmarting.py3) | _O(W * log(min(D, N)))_ | _O(1)_ | Easy | | Extended Euclidean Algorithm  |
 |C| [Spacious Sets](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad2ce)| | | | | | |
 |D| [Railroad Maintenance](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad77d)| | | | | | |
 |E| [Railroad Management](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000caccfb)| | | | | | |
