@@ -24,7 +24,7 @@ def intruder_outsmarting():
     def dist(xi, xj):
         # find min x s.t.
         # - (xi+Dx)%N = xj%N => Dx+Ny = xj-xi
-        # - (xi-Dx)%N = xj%N => D(-x)+Ny = xj-xi
+        # - (xi-Dx)%N = xj%N => -Dx+Ny = xj-xi => D(-x)+Ny = xj-xi
         g, x, _ = extended_gcd(D, N, xj-xi)
         return min(x%(N//g), -x%(N//g)) if g else -1
 
