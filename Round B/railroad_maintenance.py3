@@ -7,7 +7,7 @@
 # Space: O(N + L)
 #
 
-# Reference: https://en.wikipedia.org/wiki/Biconnected_component#Algorithmst
+# Reference: https://en.wikipedia.org/wiki/Biconnected_component#Algorithms
 def iter_get_articulation_points(graph):
     index_counter, index, lowlinks = [0], [-1]*len(graph), [0]*len(graph)
     cutpoints = []
