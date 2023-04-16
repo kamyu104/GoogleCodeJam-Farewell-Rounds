@@ -4,20 +4,23 @@
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad086
 #
 # Time:  O(N)
-# Space: O(N)
+# Space: O(1)
 #
 
 def illumination_optimization():
-    D = list(input().strip().split())
-    N = int(input())
-    S = [input() for _ in range(N)]
-    lookup = set()
-    for x in S:
-        encode = "".join(D[ord(c)-ord('A')] for c in x)
-        if encode in lookup:
-            return "YES"
-        lookup.add(encode)
-    return "NO"
+    M, R, N = list(map(int, input().strip().split()))
+    X = list(map(int, input().strip().split()))
+    result = curr = 0
+    for i in range(N):
+        if i+1 < N and X[i+1]-R <= curr:
+            continue 
+        if X[i]-R > curr:
+            break
+        result += 1
+        curr = X[i]+R
+        if curr >= M:
+            break
+    return result if curr >= M else "IMPOSSIBLE"
 
 for case in range(int(input())):
     print('Case #%d: %s' % (case+1, illumination_optimization()))
