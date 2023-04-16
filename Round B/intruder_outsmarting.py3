@@ -18,7 +18,7 @@ def extended_gcd(a, b, c):  # Time: O(log(min(a, b)))
         y, ny = ny, y-q*ny
     if c%a:
         return 0, 0, 0  # no valid solution
-    return a, x*(c//a), y*(c//a)  # return gcd, x, y s.t. ax + by = c
+    return a, x*(c//a), y*(c//a)  # return (gcd, x, y) s.t. ax + by = c
 
 def intruder_outsmarting():
     def dist(xi, xj):
