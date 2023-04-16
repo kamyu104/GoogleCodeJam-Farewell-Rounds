@@ -1,4 +1,4 @@
-# [GoogleCodeJam Farewell Rounds](https://codingcompetitions.withgoogle.com/codejam/archive/2023) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-6%20%2F%2020-ff69b4.svg) ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.googlekickstart.2021)
+# [GoogleCodeJam Farewell Rounds](https://codingcompetitions.withgoogle.com/codejam/archive/2023) ![Language](https://img.shields.io/badge/language-Python-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-6%20%2F%2020-ff69b4.svg) ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.googlecodejam.farewell.rounds)
 
 * Python solutions of Google Code Jam Farewell Rounds. Solution begins with `*` means it will get TLE in the largest data set.
 * Total computation amount > `10^8` is not friendly for Python to solve in 5 ~ 15 seconds.
