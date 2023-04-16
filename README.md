@@ -1,4 +1,4 @@
-# [GoogleCodeJam Farewell Rounds](https://codingcompetitions.withgoogle.com/codejam/archive/2023) ![Language](https://img.shields.io/badge/language-Python3-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-9%20%2F%2020-ff69b4.svg) ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.googlecodejam.farewell.rounds)
+# [GoogleCodeJam Farewell Rounds](https://codingcompetitions.withgoogle.com/codejam/archive/2023) ![Language](https://img.shields.io/badge/language-Python3-orange.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) ![Progress](https://img.shields.io/badge/progress-10%20%2F%2020-ff69b4.svg) ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.googlecodejam.farewell.rounds)
 
 * Python solutions of Google Code Jam Farewell Rounds. Solution begins with `*` means it will get TLE in the largest data set.
 * Total computation amount > `10^8` is not friendly for Python to solve in 5 ~ 15 seconds.
@@ -34,7 +34,7 @@
 |B| [Intruder Outsmarting](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad13d)| [Python3](./Round%20B/intruder_outsmarting.py3) | _O(W * log(min(D, N)))_ | _O(1)_ | Medium | | Extended Euclidean Algorithm  |
 |C| [Spacious Sets](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad2ce)| [Python3](./Round%20B/spacious_sets.py3) | _O(NlogN)_ | _O(N)_ | Easy | | Binary Search, DP|
 |D| [Railroad Maintenance](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad77d)| [PyPy3](./Round%20B/railroad_maintenance.py3) | _O(N + L)_ | _O(N + L)_ | Hard | | DFS, Biconnected Components, Articulation Points |
-|E| [Railroad Management](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000caccfb)| | | | | | |
+|E| [Railroad Management](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000caccfb)| [Python3](./Round%20B/railroad_management.py3) | _O(N)_ | _O(N)_ | | Hard | Graph |
 
 ## Round C
 
