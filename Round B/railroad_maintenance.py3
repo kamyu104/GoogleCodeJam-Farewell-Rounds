@@ -9,40 +9,44 @@
 
 # Reference: https://en.wikipedia.org/wiki/Biconnected_component#Algorithms
 def iter_get_articulation_points(graph):
+    def iter_dfs(v, p):
+        stk = [(1, (v, p))]
+        while stk:
+            step, args = stk.pop()
+            if step == 1:
+                v, p = args
+                index[v] = index_counter[0]
+                lowlinks[v] = index_counter[0]
+                index_counter[0] += 1
+                children_count = [0]
+                is_cut = [False]
+                stk.append((4, (v, p, children_count, is_cut)))
+                for w in reversed(graph[v]):
+                    if w == p:
+                        continue
+                    stk.append((2, (w, v, children_count, is_cut)))
+            elif step == 2:
+                w, v, children_count, is_cut = args
+                if index[w] == -1:
+                    children_count[0] += 1
+                    stk.append((3, (w, v, is_cut)))
+                    stk.append((1, (w, v)))
+                else:
+                    lowlinks[v] = min(lowlinks[v], index[w])
+            elif step == 3:
+                w, v, is_cut = args
+                if lowlinks[w] >= index[v]:  # (v, w) is a bridge
+                    is_cut[0] = True
+                lowlinks[v] = min(lowlinks[v], lowlinks[w])
+            elif step == 4:
+                v, p, children_count, is_cut = args
+                if (p != -1 and is_cut[0]) or (p == -1 and children_count[0] >= 2):
+                    cutpoints.append(v)
     index_counter, index, lowlinks = [0], [-1]*len(graph), [0]*len(graph)
     cutpoints = []
-    stk = [(1, (0, -1))]
-    while stk:
-        step, args = stk.pop()
-        if step == 1:
-            v, p = args
-            index[v] = index_counter[0]
-            lowlinks[v] = index_counter[0]
-            index_counter[0] += 1
-            children_count = [0]
-            is_cut = [False]
-            stk.append((4, (v, p, children_count, is_cut)))
-            for w in reversed(graph[v]):
-                if w == p:
-                    continue
-                stk.append((2, (w, v, children_count, is_cut)))
-        elif step == 2:
-            w, v, children_count, is_cut = args
-            if index[w] == -1:
-                children_count[0] += 1
-                stk.append((3, (w, v, is_cut)))
-                stk.append((1, (w, v)))
-            else:
-                lowlinks[v] = min(lowlinks[v], index[w])
-        elif step == 3:
-            w, v, is_cut = args
-            if lowlinks[w] >= index[v]:  # (v, w) is a bridge
-                is_cut[0] = True
-            lowlinks[v] = min(lowlinks[v], lowlinks[w])
-        elif step == 4:
-            v, p, children_count, is_cut = args
-            if (p != -1 and is_cut[0]) or (p == -1 and children_count[0] >= 2):
-                cutpoints.append(v)
+    for v in range(len(graph)):
+        if index[v] == -1:
+            iter_dfs(v, -1)
     return cutpoints
 
 def railroad_maintenance():
