@@ -30,17 +30,12 @@ def intruder_outsmarting():
         # - (xi+Dx)%N = xj%N => Dx+Ny = xj-xi
         # - (xi-Dx)%N = xj%N => -Dx+Ny = xj-xi => D(-x)+Ny = xj-xi
         g, x, _ = extended_gcd(D, N, xj-xi)
-        return min(x%(N//g), -x%(N//g)) if g else -1
+        return min(x%(N//g), -x%(N//g)) if g else float("inf")
 
     W, N, D = list(map(int, input().strip().split()))
     X = list(map(int, input().strip().split()))
-    result = 0
-    for i in range(W//2):
-        d = dist(X[i], X[~i])
-        if d == -1:
-            return "IMPOSSIBLE"
-        result += d
-    return result
+    result = sum(dist(X[i], X[~i]) for i in range(W//2))
+    return result if result != float("inf") else "IMPOSSIBLE"
 
 for case in range(int(input())):
     print('Case #%d: %s' % (case+1, intruder_outsmarting()))
