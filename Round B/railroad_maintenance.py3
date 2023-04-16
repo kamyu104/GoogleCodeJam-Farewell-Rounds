@@ -42,6 +42,7 @@ def iter_get_articulation_points(graph):
                 v, p, children_count, is_cut = args
                 if (p != -1 and is_cut[0]) or (p == -1 and children_count[0] >= 2):
                     cutpoints.append(v)
+
     index_counter, index, lowlinks = [0], [-1]*len(graph), [0]*len(graph)
     cutpoints = []
     for v in range(len(graph)):
