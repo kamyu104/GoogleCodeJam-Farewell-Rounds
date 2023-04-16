@@ -15,16 +15,16 @@
 ## Round A
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Colliding Encoding](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad7cf)| [Python](./Round%20A/colliding_encoding.py3)| _O(N)_ | _O(N)_ | Easy | | Hash Table |
-|B| [Illumination Optimization](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad086)| [Python](./Round%20A/illumination_optimization.py3) | _O(N)_ | _O(N)_ | Medium | | Greedy |
-|C| [Rainbow Sort](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cada38)| [Python](./Round%20A/rainbow_sort.py3)| _O(N)_ | _O(N)_ | Easy | | Hash Table |
-|D| [ASCII Art](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad9c2)| [Python](./Round%20A/ascii_art.py3) | _O(1)_ | _O(1)_ | Easy | | Math |
-|E| [Untie](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad9c1)| [Python](./Round%20A/untie.py3) | _O(N)_ | _O(1)_ | Medium | | Greedy |
+|A| [Colliding Encoding](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad7cf)| [Python 3](./Round%20A/colliding_encoding.py3)| _O(N)_ | _O(N)_ | Easy | | Hash Table |
+|B| [Illumination Optimization](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad086)| [Python 3](./Round%20A/illumination_optimization.py3) | _O(N)_ | _O(N)_ | Medium | | Greedy |
+|C| [Rainbow Sort](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cada38)| [Python 3](./Round%20A/rainbow_sort.py3)| _O(N)_ | _O(N)_ | Easy | | Hash Table |
+|D| [ASCII Art](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad9c2)| [Python 3](./Round%20A/ascii_art.py3) | _O(1)_ | _O(1)_ | Easy | | Math |
+|E| [Untie](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b94/0000000000cad9c1)| [Python 3](./Round%20A/untie.py3) | _O(N)_ | _O(1)_ | Medium | | Greedy |
 
 ## Round B
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Collecting Pancakes](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad7d1)| [Python](./Round%20B/collecting_pancackes.py)| _O(N)_ | _O(1)_ | Easy | | Greedy, Prefix Sum |
+|A| [Collecting Pancakes](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad7d1)| [Python 3](./Round%20B/collecting_pancackes.py)| _O(N)_ | _O(1)_ | Easy | | Greedy, Prefix Sum |
 
 ## Round C
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
