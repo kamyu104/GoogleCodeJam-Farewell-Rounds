@@ -33,7 +33,7 @@
 |A| [Collecting Pancakes](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad7d1)| [Python3](./Round%20B/collecting_pancakes.py3)| _O(N)_ | _O(1)_ | Medium | | Greedy, Prefix Sum |
 |B| [Intruder Outsmarting](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad13d)| [Python3](./Round%20B/intruder_outsmarting.py3) | _O(W * log(min(D, N)))_ | _O(1)_ | Medium | | Extended Euclidean Algorithm  |
 |C| [Spacious Sets](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad2ce)| [Python3](./Round%20B/spacious_sets.py3) | _O(NlogN)_ | _O(N)_ | Easy | | Binary Search, DP|
-|D| [Railroad Maintenance](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad77d)| [PyPy3](./Round%20B/railroad_maintenance.py3) | _O(N + L)_ | _O(N + L)_ | Hard | | Biconnected Component |
+|D| [Railroad Maintenance](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad77d)| [PyPy3](./Round%20B/railroad_maintenance.py3) | _O(N + L)_ | _O(N + L)_ | Hard | | DFS, Biconnected Component, Articulation Points |
 |E| [Railroad Management](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000caccfb)| | | | | | |
 
 ## Round C
