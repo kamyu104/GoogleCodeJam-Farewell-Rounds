@@ -30,7 +30,7 @@
 
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Collecting Pancakes](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad7d1)| [Python 3](./Round%20B/collecting_pancakes.py3)| _O(N)_ | _O(1)_ | Easy | | Greedy, Prefix Sum |
+|A| [Collecting Pancakes](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad7d1)| [Python 3](./Round%20B/collecting_pancakes.py3)| _O(N)_ | _O(1)_ | Medium | | Greedy, Prefix Sum |
 
 ## Round C
 
