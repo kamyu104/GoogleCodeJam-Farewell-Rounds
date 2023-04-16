@@ -13,7 +13,7 @@ def collecting_pancakes():
     La, Ra, Lb, Rb = list(map(lambda x: int(x)-1, input().strip().split()))
     if Ra < Lb:
         return sum(A[i] for i in range((Ra+Lb)//2+1))
-    elif Rb < La:
+    if Rb < La:
         return sum(A[i] for i in range((Rb+La+1)//2, N))
     result, total, curr = 0, sum(A), sum(A[i] for i in range(max(La, Lb)))
     for i in range(max(La, Lb), min(Ra, Rb)+1):
