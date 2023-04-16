@@ -22,9 +22,11 @@ def extended_gcd(a, b, c):  # Time: O(log(min(a, b)))
 
 def intruder_outsmarting():
     def dist(xi, xj):
-        g, x1, _ = extended_gcd(D, N, xj-xi)  # (xi+Dx)%N = xj%N => Dx+Ny = xj-xi
-        _, x2, _ = extended_gcd(-D, N, xj-xi)  # (xi-Dx)%N = xj%N => -Dx+Ny = xj-xi
-        return min(x1%(N//g), x2%(N//g)) if g else -1
+        # find min x s.t.
+        # - (xi+Dx)%N = xj%N => Dx+Ny = xj-xi
+        # - (xi-Dx)%N = xj%N => D(-x)+Ny = xj-xi
+        g, x, _ = extended_gcd(D, N, xj-xi)
+        return min(x%(N//g), -x%(N//g)) if g else -1
 
     W, N, D = list(map(int, input().strip().split()))
     X = list(map(int, input().strip().split()))
