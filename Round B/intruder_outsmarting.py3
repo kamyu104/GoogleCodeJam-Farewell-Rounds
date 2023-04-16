@@ -9,16 +9,20 @@
 
 # Reference: https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Pseudocode
 def extended_gcd(a, b, c):  # Time: O(log(min(a, b)))
+    g, ng = a, b
     x, nx = 1, 0
     y, ny = 0, 1
-    while b:
-        q = a//b
-        a,  b =  b, a-q*b
+    while ng:
+        q = g//ng
+        g, ng = ng, g-q*ng
         x, nx = nx, x-q*nx
         y, ny = ny, y-q*ny
-    if c%a:
+    if c%g:
         return 0, 0, 0  # no valid solution
-    return a, x*(c//a), y*(c//a)  # return (gcd, x, y) s.t. ax + by = c
+    x *= c//g
+    y *= c//g
+    assert(a*x+b*y == c)
+    return g, x, y  # return (gcd, x, y) s.t. ax + by = c
 
 def intruder_outsmarting():
     def dist(xi, xj):
