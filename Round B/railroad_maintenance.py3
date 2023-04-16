@@ -35,7 +35,7 @@ def iter_get_articulation_points(graph):
                     lowlinks[v] = min(lowlinks[v], index[w])
             elif step == 3:
                 w, v, is_cut = args
-                if lowlinks[w] >= index[v]:  # (v, w) is a bridge
+                if lowlinks[w] >= index[v]:
                     is_cut[0] = True
                 lowlinks[v] = min(lowlinks[v], lowlinks[w])
             elif step == 4:
