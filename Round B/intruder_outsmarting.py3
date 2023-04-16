@@ -7,7 +7,7 @@
 # Space: O(1)
 #
 
-# Reference: https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Pseudocode
+# reference: https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Pseudocode
 def extended_gcd(a, b, c):  # Time: O(log(min(a, b)))
     g, ng = a, b
     x, nx = 1, 0

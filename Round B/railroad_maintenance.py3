@@ -7,7 +7,7 @@
 # Space: O(N + L)
 #
 
-# Reference: https://en.wikipedia.org/wiki/Biconnected_component#Algorithms
+# reference: https://en.wikipedia.org/wiki/Biconnected_component#Algorithms
 def iter_get_articulation_points(graph):
     def iter_dfs(v, p):
         stk = [(1, (v, p))]
