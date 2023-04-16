@@ -31,6 +31,10 @@
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Collecting Pancakes](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad7d1)| [Python 3](./Round%20B/collecting_pancakes.py3)| _O(N)_ | _O(1)_ | Medium | | Greedy, Prefix Sum |
+|B| [Intruder Outsmarting](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad13d)| | | | | | |
+|C| [Spacious Sets](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad2ce)| | | | | | |
+|D| [Railroad Maintenance](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad77d)| | | | | | |
+|E| [Railroad Management](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000caccfb)| | | | | | |
 
 ## Round C
 
@@ -38,6 +42,11 @@
 
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Game Sort: Part 1](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cacb87)| | | | | | |
+|B| [Immunization Operation](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cacb88)| | | | | | |
+|C| [Evolutionary Algorithms](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad08b)| | | | | | |
+|D| [The Decades of Coding Competitions](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad9c6)| | | | | | |
+|E| [Game Sort: Part 2](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad339)| | | | | | |
 
 ## Round D
 
@@ -45,3 +54,8 @@
 
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
+|A| [Indispensable Overpass](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cadc76)| | | | | | |
+|B| [Genetic Sequences](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cadc77)| | | | | | |
+|C| [Hey Google, Drive!](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000caccfa)| | | | | | |
+|D| [Old Gold](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cada3b)| | | | | | |
+|E| [Ring-Preserving Networks](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cad08a)| | | | | | |
