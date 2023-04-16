@@ -31,7 +31,7 @@
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Collecting Pancakes](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad7d1)| [Python3](./Round%20B/collecting_pancakes.py3)| _O(N)_ | _O(1)_ | Medium | | Greedy, Prefix Sum |
-|B| [Intruder Outsmarting](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad13d)| [Python3](./Round%20B/intruder_outsmarting.py3) | _O(W * log(min(D, N)))_ | _O(1)_ | Easy | | Extended Euclidean Algorithm  |
+|B| [Intruder Outsmarting](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad13d)| [Python3](./Round%20B/intruder_outsmarting.py3) | _O(W * log(min(D, N)))_ | _O(1)_ | Medium | | Extended Euclidean Algorithm  |
 |C| [Spacious Sets](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad2ce)| | | | | | |
 |D| [Railroad Maintenance](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000cad77d)| | | | | | |
 |E| [Railroad Management](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c9607c/0000000000caccfb)| | | | | | |
