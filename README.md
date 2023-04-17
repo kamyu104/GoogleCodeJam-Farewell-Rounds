@@ -50,7 +50,7 @@
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Game Sort: Part 1](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cacb87)| [Python3](./Round%20C/game_sort_part_1.py3)  | _O(P * L)_ | _O(1)_ | Easy | | Greedy, Counting Sort, Freq Table |
 |B| [Immunization Operation](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cacb88)| [Python3](./Round%20C/immunization_operation.py3)  |  _O(M + VlogV)_ | _O(V)_  | Easy | | Simulation, Heap |
-|C| [Evolutionary Algorithms](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad08b)| [PyPy3](./Round%20C/evolutionary_algorithms.py3) | _O(NlogN)_  |  _O(N)_ | Medium | | BIT, Fenwick Tree, Coordinate Compression, Combinatorics |
+|C| [Evolutionary Algorithms](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad08b)| [PyPy3](./Round%20C/evolutionary_algorithms.py3) | _O(NlogN)_  |  _O(N)_ | Medium | | DFS, BIT, Fenwick Tree, Coordinate Compression, Combinatorics |
 |D| [The Decades of Coding Competitions](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad9c6)| | | | | | |
 |E| [Game Sort: Part 2](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad339)| | | | | | |
 
