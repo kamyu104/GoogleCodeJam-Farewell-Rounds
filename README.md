@@ -48,7 +48,7 @@
 
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
-|A| [Game Sort: Part 1](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cacb87)| [Python3](./Round%20C/game_sort_part_1.py3)  | _O(P * L)_ | _O(1)_ | Easy | | Counting Sort, Freq Table |
+|A| [Game Sort: Part 1](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cacb87)| [Python3](./Round%20C/game_sort_part_1.py3)  | _O(P * L)_ | _O(1)_ | Easy | | Greedy, Counting Sort, Freq Table |
 |B| [Immunization Operation](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cacb88)| | | | | | |
 |C| [Evolutionary Algorithms](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad08b)| | | | | | |
 |D| [The Decades of Coding Competitions](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad9c6)| | | | | | |
