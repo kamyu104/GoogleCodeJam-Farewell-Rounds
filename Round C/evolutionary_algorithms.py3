@@ -48,7 +48,7 @@ def evolutionary_algorithms():
     adj = [[] for _ in range(N)]
     for i, j in enumerate(P, 1):
         adj[j].append(i)
-    s_to_idx = {x:i for i, x in enumerate(sorted(set(S+[K*s for s in S])))}
+    s_to_idx = {x:i for i, x in enumerate(sorted(set(S)|set(K*s for s in S)))}
     cnt, bit = iter_dfs()
     return sum(cnt[i]*1*(bit.query(s_to_idx[s]-1)-cnt[i]) for i, s in enumerate(S))
 
