@@ -14,14 +14,14 @@ def immunization_operation():
     P = list(map(int, input().strip().split()))
     D = list(map(int, input().strip().split()))
     X = list(map(int, input().strip().split()))
-    left, right = [], []
-    for x in range(V):
-        if P[x] < D[x]:
-            right.append(D[x])
+    right, left = [], []
+    for i in range(V):
+        if P[i] < D[i]:
+            right.append(i)
         else:
-            left.append((P[x], D[x]))
-    left.sort(reverse=True)
-    right.sort(reverse=True)
+            left.append(i)
+    right.sort(reverse=True, key=lambda x: D[x])
+    left.sort(reverse=True, key=lambda x: P[x])
     max_heap = []
     curr = 0
     result = []
@@ -29,11 +29,11 @@ def immunization_operation():
         curr += x
         cnt = 0
         if x > 0:
-            while right and right[-1] <= curr:
+            while right and D[right[-1]] <= curr:
                 right.pop()
                 cnt += 1
-            while left and left[-1][0] <= curr:
-                heappush(max_heap, -left.pop()[1])
+            while left and P[left[-1]] <= curr:
+                heappush(max_heap, -D[left.pop()])
         else:
             while max_heap and -max_heap[0] >= curr:
                 heappop(max_heap)
