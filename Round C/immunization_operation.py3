@@ -23,8 +23,8 @@ def immunization_operation():
     right.sort(key=lambda x: D[x], reverse=True)
     left.sort(key=lambda x: P[x], reverse=True)
     max_heap = []
-    curr = 0
     result = []
+    curr = 0
     for x in X:
         curr += x
         cnt = 0
