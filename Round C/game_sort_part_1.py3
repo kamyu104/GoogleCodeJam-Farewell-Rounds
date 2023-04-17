@@ -37,9 +37,7 @@ def collecting_pancakes():
     P = int(input())
     S = list(input().strip().split())
     result = [[] for _ in range(P)]
-    if not all(find_nondecreasing(i) for i in range(P)):
-        return "IMPOSSIBLE"
-    return "POSSIBLE\n%s" % " ".join(map(lambda x: "".join(x), result))
+    return "POSSIBLE\n%s" % " ".join(map(lambda x: "".join(x), result)) if all(find_nondecreasing(i) for i in range(P)) else "IMPOSSIBLE"
 
 for case in range(int(input())):
     print('Case #%d: %s' % (case+1, collecting_pancakes()))
