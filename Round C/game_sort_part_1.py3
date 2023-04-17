@@ -10,7 +10,7 @@
 from collections import Counter
 from string import ascii_uppercase
 
-def collecting_pancakes():
+def game_sort_part_1():
     def find_nondecreasing(i):
         prev, curr = (result[i-1] if i else []), result[i]
         cnt = Counter(S[i])
@@ -40,4 +40,4 @@ def collecting_pancakes():
     return "POSSIBLE\n%s" % " ".join(map(lambda x: "".join(x), result)) if all(find_nondecreasing(i) for i in range(P)) else "IMPOSSIBLE"
 
 for case in range(int(input())):
-    print('Case #%d: %s' % (case+1, collecting_pancakes()))
+    print('Case #%d: %s' % (case+1, game_sort_part_1()))
