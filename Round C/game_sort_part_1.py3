@@ -11,29 +11,25 @@ from collections import Counter
 from string import ascii_uppercase
 
 def collecting_pancakes():
-    def fallback(curr, cnt, new_curr):
-        for i in reversed(range(len(new_curr))):
-            cnt[new_curr.pop()] += 1
-            c = next((c for c in ascii_uppercase if c > curr[i] and cnt[c]), None)
-            if c is None:
-                continue
-            cnt[c] -= 1
-            new_curr.append(c)
-            break
-        for c in ascii_uppercase:
-            new_curr.extend([c]*cnt[c])
-        return new_curr if curr <= new_curr else []
-
     def find_nondecreasing(curr, s):
         cnt = Counter(s)
         new_curr = []
         for i in range(len(curr)):
             if not cnt[curr[i]]:
                 c = next((c for c in ascii_uppercase if c > curr[i] and cnt[c]), None)
-                if c is None:
-                    return fallback(curr, cnt, new_curr)
-                cnt[c] -= 1
-                new_curr.append(c)
+                if c:
+                    cnt[c] -= 1
+                    new_curr.append(c)
+                    break
+                for i in reversed(range(len(new_curr))):
+                    cnt[new_curr.pop()] += 1
+                    c = next((c for c in ascii_uppercase if c > curr[i] and cnt[c]), None)
+                    if c:
+                        cnt[c] -= 1
+                        new_curr.append(c)
+                        break
+                else:
+                    return []
                 break
             cnt[curr[i]] -= 1
             new_curr.append(curr[i])
