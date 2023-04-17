@@ -16,18 +16,14 @@ def collecting_pancakes():
         new_curr = []
         for i in range(len(curr)):
             if not cnt[curr[i]]:
-                c = next((c for c in ascii_uppercase if c > curr[i] and cnt[c]), None)
-                if c:
-                    cnt[c] -= 1
-                    new_curr.append(c)
-                    break
-                for i in reversed(range(len(new_curr))):
-                    cnt[new_curr.pop()] += 1
+                for i in reversed(range(len(new_curr)+1)):
                     c = next((c for c in ascii_uppercase if c > curr[i] and cnt[c]), None)
                     if c:
                         cnt[c] -= 1
                         new_curr.append(c)
                         break
+                    if new_curr:
+                        cnt[new_curr.pop()] += 1
                 else:
                     return []
                 break
