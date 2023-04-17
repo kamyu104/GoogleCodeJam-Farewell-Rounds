@@ -34,7 +34,7 @@ def immunization_operation():
                 cnt += 1
             while left and left[-1][0] <= curr:
                 heappush(max_heap, -left.pop()[1])
-        elif x < 0:
+        else:
             while max_heap and -max_heap[0] >= curr:
                 heappop(max_heap)
                 cnt += 1
