@@ -7,8 +7,6 @@
 # Space: O(N)
 #
 
-from bisect import bisect_left
-
 class BIT(object):  # 0-indexed.
     def __init__(self, n):
         self.__bit = [0]*(n+1)  # Extra one for dummy node.
@@ -42,7 +40,7 @@ def evolutionary_algorithms():
             elif step == 2:
                 cnt[u] += bit.query(s_to_idx[S[u]]-1)
                 bit.add(s_to_idx[K*S[u]], 1)
-        return cnt
+        return cnt, bit
         
     N, K = list(map(int, input().strip().split()))
     S = list(map(int, input().strip().split()))
@@ -50,11 +48,9 @@ def evolutionary_algorithms():
     adj = [[] for _ in range(N)]
     for i, j in enumerate(P, 1):
         adj[j].append(i)
-    K_S = [K*s for s in S]
-    K_S.sort()
-    s_to_idx = {x:i for i, x in enumerate(sorted(set(S+K_S)))}
-    cnt = iter_dfs()
-    return sum(cnt[i]*1*(bisect_left(K_S, s)-cnt[i]) for i, s in enumerate(S))
+    s_to_idx = {x:i for i, x in enumerate(sorted(set(S+[K*s for s in S])))}
+    cnt, bit = iter_dfs()
+    return sum(cnt[i]*1*(bit.query(s_to_idx[s]-1)-cnt[i]) for i, s in enumerate(S))
 
 for case in range(int(input())):
     print('Case #%d: %s' % (case+1, evolutionary_algorithms()))
