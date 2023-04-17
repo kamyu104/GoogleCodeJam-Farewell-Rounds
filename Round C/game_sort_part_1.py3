@@ -4,45 +4,42 @@
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cacb87
 #
 # Time:  O(P * L), L = max(len(s) for s in S)
-# Space: O(L)
+# Space: O(1)
 #
 
 from collections import Counter
 from string import ascii_uppercase
 
 def collecting_pancakes():
-    def find_nondecreasing(curr, s):
-        cnt = Counter(s)
-        new_curr = []
-        for i in range(len(curr)):
-            if not cnt[curr[i]]:
-                for i in reversed(range(len(new_curr)+1)):
-                    c = next((c for c in ascii_uppercase if c > curr[i] and cnt[c]), None)
-                    if c:
-                        cnt[c] -= 1
-                        new_curr.append(c)
-                        break
-                    if new_curr:
-                        cnt[new_curr.pop()] += 1
-                else:
-                    return []
-                break
-            cnt[curr[i]] -= 1
-            new_curr.append(curr[i])
+    def find_nondecreasing(i):
+        curr, new_curr = (result[i-1] if i else []), result[i]
+        cnt = Counter(S[i])
+        for c in curr:
+            if cnt[c]:
+                cnt[c] -= 1
+                new_curr.append(c)
+                continue
+            for i in reversed(range(len(new_curr)+1)):
+                c = next((c for c in ascii_uppercase if c > curr[i] and cnt[c]), None)
+                if c:
+                    cnt[c] -= 1
+                    new_curr.append(c)
+                    break
+                if new_curr:
+                    cnt[new_curr.pop()] += 1
+            else:
+                return False
+            break
         for c in ascii_uppercase:
             new_curr.extend([c]*cnt[c])
-        return new_curr
+        return True
 
     P = int(input())
     S = list(input().strip().split())
-    result = []
-    curr = []
-    for s in S:
-        curr = find_nondecreasing(curr, s)
-        if not curr:
-            return "IMPOSSIBLE"
-        result.append("".join(curr))
-    return "POSSIBLE\n%s" % " ".join(result)
+    result = [[] for _ in range(P)]
+    if not all(find_nondecreasing(i) for i in range(P)):
+        return "IMPOSSIBLE"
+    return "POSSIBLE\n%s" % " ".join(map(lambda x: "".join(x), result))
 
 for case in range(int(input())):
     print('Case #%d: %s' % (case+1, collecting_pancakes()))
