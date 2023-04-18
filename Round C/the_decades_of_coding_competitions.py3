@@ -42,10 +42,10 @@ def the_decades_of_coding_competitions():
     uf_exclude = defaultdict(lambda: UnionFind(N))
     K_set = set(K for _, _, K in U_V_K)
     for U, V, K in U_V_K:
+        uf.union_set(U, V)
         for k in K_set:
             if k != K:
                 uf_exclude[k].union_set(U, V)
-        uf.union_set(U, V)
     group = defaultdict(set)
     for U, V, K in U_V_K:
         group[uf.find_set(U)].add(K)
