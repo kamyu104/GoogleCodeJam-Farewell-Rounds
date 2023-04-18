@@ -39,18 +39,18 @@ def the_decades_of_coding_competitions():
     U_V_K = [list(map(lambda x: int(x)-1, input().strip().split())) for _ in range(M)]
     P_C = [list(map(lambda x: int(x)-1, input().strip().split())) for _ in range(Q)]
     uf = UnionFind(N)
-    ufs = defaultdict(lambda: UnionFind(N))
+    uf_exclude = defaultdict(lambda: UnionFind(N))
     K_set = set(K for _, _, K in U_V_K)
     for U, V, K in U_V_K:
         for k in K_set:
             if k != K:
-                ufs[k].union_set(U, V)
+                uf_exclude[k].union_set(U, V)
         uf.union_set(U, V)
     group = defaultdict(set)
     for U, V, K in U_V_K:
         group[uf.find_set(U)].add(K)
     return sum(len(group[uf.find_set(P)])%2 == 1 or
-               any(ufs[k].find_set(P) == ufs[k].find_set(C) for k in group[uf.find_set(P)])
+               any(uf_exclude[k].find_set(P) == uf_exclude[k].find_set(C) for k in group[uf.find_set(P)])
                for P, C in P_C if uf.find_set(P) == uf.find_set(C))
 
 for case in range(int(input())):
