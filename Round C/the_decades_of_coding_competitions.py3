@@ -1,6 +1,6 @@
 # Copyright (c) 2023 kamyu. All rights reserved.
 #
-# Google Code Jam Farewell Round C - Problem lookup. The Decades of Coding Competitions
+# Google Code Jam Farewell Round C - Problem D. The Decades of Coding Competitions
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad9c6
 #
 # Time:  O(K * (N + M + Q)), pass in PyPy3 but Python3
