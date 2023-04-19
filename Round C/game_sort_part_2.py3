@@ -16,7 +16,7 @@ def game_sort_part_2():
         return list(S) if i != -1 else []
 
     def P_2():
-        cnt1, cnt2 = Counter(), Counter(S[i] for i in range(len(S)))
+        cnt1, cnt2 = Counter(), Counter(S)
         c1 = ascii_uppercase[-1]
         r = len(ascii_uppercase)-1
         for i in range(len(S)-1):
