@@ -2,7 +2,7 @@
 
 ![Language](https://img.shields.io/badge/language-Python3-orange.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-![Progress](https://img.shields.io/badge/progress-14%20%2F%2020-ff69b4.svg)
+![Progress](https://img.shields.io/badge/progress-15%20%2F%2020-ff69b4.svg)
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.googlecodejam.farewell.rounds)
 
 * Python solutions of Google Code Jam Farewell Rounds. Solution begins with `*` means it will get TLE in the largest data set.
@@ -52,7 +52,7 @@
 |B| [Immunization Operation](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cacb88)| [Python3](./Round%20C/immunization_operation.py3)  |  _O(M + VlogV)_ | _O(V)_  | Easy | | Simulation, Heap |
 |C| [Evolutionary Algorithms](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad08b)| [PyPy3](./Round%20C/evolutionary_algorithms.py3) | _O(NlogN)_  |  _O(N)_ | Medium | | DFS, BIT, Fenwick Tree, Coordinate Compression, Combinatorics |
 |D| [The Decades of Coding Competitions](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad9c6)| [PyPy3](./Round%20C/the_decades_of_coding_competitions.py3) | _O(K * (N + M + Q))_  |  _O(K * N)_ |  Medium | | Graph, Union Find, DSU |
-|E| [Game Sort: Part 2](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad339)| | | | | | |
+|E| [Game Sort: Part 2](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad339)| [Python3](./Round%20C/game_sort_part_2.py3)  | _O(N)_ | _O(1)_ | Hard | | Constructive Algorithms |
 
 ## Round D
 
