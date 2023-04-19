@@ -37,7 +37,7 @@ def game_sort_part_2():
 
     def P_3():
         if S[0] >= S[-1]:
-            return [S[0:1], S[1:-1], S[-1:]]
+            return [S[:1], S[1:-1], S[-1:]]
         i = min(range(len(S)-1), key=lambda x: S[x])
         if i != 0:
             return [S[:i], S[i:i+1], S[i+1:]]
