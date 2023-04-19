@@ -19,13 +19,15 @@ def game_sort_part_1():
                 cnt[c] -= 1
                 curr.append(c)
                 continue
+            c = next((c for c in reversed(ascii_uppercase) if cnt[c]), 'A')
             for i in reversed(range(len(curr)+1)):
-                c = next((c for c in ascii_uppercase if c > prev[i] and cnt[c]), None)
-                if c:
+                if c > prev[i]:
+                    c = next((c for c in ascii_uppercase if c > prev[i] and cnt[c]))
                     cnt[c] -= 1
                     curr.append(c)
                     break
                 if curr:
+                    c = max(c, curr[-1])
                     cnt[curr.pop()] += 1
             else:
                 return False
