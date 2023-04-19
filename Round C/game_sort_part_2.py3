@@ -69,7 +69,7 @@ def game_sort_part_2():
             mid = [S[i], S[i+1]]
             j = i+2
         else:
-            i = next((i for i in range(len(S)-2) if S[i] == S[i+1] == S[i+2]), -1)
+            i = next((i for i in range(len(S)-2) if S[i] == S[i+2]), -1)
             if i != -1:
                 mid = [S[i]*2, S[i]]
                 j = i+3
