@@ -7,9 +7,6 @@
 # Space: O(1)
 #
 
-from collections import Counter
-from string import ascii_uppercase
-
 def game_sort_part_2():
     def P_N():
         i = next((i for i in range(len(S)-1) if S[i] > S[i+1]), -1)
@@ -74,7 +71,7 @@ def game_sort_part_2():
                 mid = [S[i]*2, S[i]]
                 j = i+3
         result = []
-        if j != -1:
+        if i != -1:
             left = min(i, (P-len(mid))-int(j != len(S)))
             right = min(len(S)-j, (P-len(mid))-left)
             for k in range(left):
