@@ -19,7 +19,7 @@ def game_sort_part_1():
                 cnt[c] -= 1
                 curr.append(c)
                 continue
-            c = next((c for c in reversed(ascii_uppercase) if cnt[c]), 'A')
+            c = next((c for c in reversed(ascii_uppercase) if cnt[c]), ascii_uppercase[0])
             for i in reversed(range(len(curr)+1)):
                 if c > prev[i]:
                     c = next((c for c in ascii_uppercase if c > prev[i] and cnt[c]))
