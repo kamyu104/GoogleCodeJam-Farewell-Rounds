@@ -18,7 +18,7 @@ def game_sort_part_2():
     def P_2():
         cnt1, cnt2 = Counter(), Counter(S[i] for i in range(len(S)))
         c1 = 'Z'
-        l, r = len(ascii_uppercase)-1, next(r for r in reversed(range(len(ascii_uppercase))) if cnt2[ascii_uppercase[r]])
+        r = next(r for r in reversed(range(len(ascii_uppercase))) if cnt2[ascii_uppercase[r]])
         for i in range(len(S)-1):
             cnt1[S[i]] += 1
             cnt2[S[i]] -= 1
