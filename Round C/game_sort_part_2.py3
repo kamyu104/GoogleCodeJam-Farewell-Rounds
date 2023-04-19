@@ -24,7 +24,7 @@ def game_sort_part_2():
             cnt2[S[i]] -= 1
             if S[i] < c1:
                 c1 = S[i]
-            r = next((r for r in reversed(range(r+1)) if cnt2[ascii_uppercase[r]]), -1)
+            r = next(r for r in reversed(range(r+1)) if cnt2[ascii_uppercase[r]])
             c2 = ascii_uppercase[r]
             if c1 > c2 or (c1 == c2 and (cnt1[c1] > cnt2[c2] or cnt1[c1] != i+1)):
                 return [S[:i+1], S[i+1:]]
