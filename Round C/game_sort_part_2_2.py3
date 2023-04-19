@@ -4,7 +4,7 @@
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad339
 #
 # Time:  O(N)
-# Space: O(1)
+# Space: O(1), less space but slower
 #
 
 from collections import Counter

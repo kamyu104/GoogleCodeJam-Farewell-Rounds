@@ -4,7 +4,7 @@
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad339
 #
 # Time:  O(N)
-# Space: O(N)
+# Space: O(N), more space but faster
 #
 
 def game_sort_part_2():
