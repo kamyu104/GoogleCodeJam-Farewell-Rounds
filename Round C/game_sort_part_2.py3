@@ -4,8 +4,11 @@
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95433/0000000000cad339
 #
 # Time:  O(N)
-# Space: O(N), more space but faster
+# Space: O(1)
 #
+
+from collections import Counter
+from string import ascii_uppercase
 
 def game_sort_part_2():
     def P_N():
@@ -13,25 +16,17 @@ def game_sort_part_2():
         return list(S) if i != -1 else []
 
     def P_2():
-        left = [(S[0], 1)]
-        for i in range(1, len(S)):
-            if S[i] < left[-1][0]:
-                left.append((S[i], 1))
-            elif S[i] == left[-1][0]:
-                left.append((left[-1][0], left[-1][1]+1))
-            else:
-                left.append(left[-1])
-        right = [(S[-1], 1)]
-        for i in reversed(range(len(S)-1)):
-            if S[i] > right[-1][0]:
-                right.append((S[i], 1))
-            elif  S[i] == right[-1][0]:
-                right.append((right[-1][0], right[-1][1]+1))
-            else:
-                right.append(right[-1])
-        right.reverse()
+        cnt1, cnt2 = Counter(), Counter(S[i] for i in range(len(S)))
+        c1 = 'Z'
+        l, r = len(ascii_uppercase)-1, next(r for r in reversed(range(len(ascii_uppercase))) if cnt2[ascii_uppercase[r]])
         for i in range(len(S)-1):
-            if left[i][0] > right[i+1][0] or (left[i][0] == right[i+1][0] and (left[i][1] > right[i+1][1] or left[i][1] != i+1)):
+            cnt1[S[i]] += 1
+            cnt2[S[i]] -= 1
+            if S[i] < c1:
+                c1 = S[i]
+            r = next((r for r in reversed(range(r+1)) if cnt2[ascii_uppercase[r]]), -1)
+            c2 = ascii_uppercase[r]
+            if c1 > c2 or (c1 == c2 and (cnt1[c1] > cnt2[c2] or cnt1[c1] != i+1)):
                 return [S[:i+1], S[i+1:]]
         return []
 
