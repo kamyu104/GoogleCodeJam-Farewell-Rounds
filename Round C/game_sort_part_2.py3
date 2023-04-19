@@ -60,7 +60,6 @@ def game_sort_part_2():
 
     def P_others():
         i = next((i for i in range(len(S)-1) if S[i] > S[i+1]), -1)
-        j = -1
         mid = []
         if i != -1:
             mid = [S[i], S[i+1]]
