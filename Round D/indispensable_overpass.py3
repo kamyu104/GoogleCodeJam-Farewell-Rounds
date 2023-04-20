@@ -29,7 +29,7 @@ def indispensable_overpass():
     dp1, d1 = dist(X)
     dp2, d2 = dist(F)
     total = (W+E)*((W+E)-1)//2
-    result = [(dp1[A]*E + dp2[B]*W + W*E + (d1+d2))/total for A, B in A_B]
+    result = [((dp1[A]*E + dp2[B]*W + W*E) + (d1+d2)) / total for A, B in A_B]
     return " ".join(map(str, result))
 
 for case in range(int(input())):
