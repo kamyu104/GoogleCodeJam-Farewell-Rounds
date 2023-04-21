@@ -7,8 +7,6 @@
 # Space: O((N + M) * log(N + M))
 #
 
-from bisect import bisect_left
-
 def log2_floor(x):  # assumed x >= 1
     return x.bit_length()-1
 
@@ -129,7 +127,7 @@ def binary_search_right(left, right, check):
 def genetic_sequences():
     def check(l):
         i = rank[-S]
-        idx = bisect_left(sorted_A_ranks, i)
+        idx = binary_search(0, len(sorted_A_ranks)-1, lambda x: sorted_A_ranks[x] >= i)
         it = binary_search(0, idx-1, lambda x: rmq_lcp.query(sorted_A_ranks[x], i-1) >= l)
         left = sorted_A_ranks[it] if it <= idx-1 else i
         it = binary_search_right(idx, len(sorted_A_ranks)-1, lambda x: rmq_lcp.query(i, sorted_A_ranks[x]-1) >= l)
