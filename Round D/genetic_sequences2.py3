@@ -186,7 +186,7 @@ def binary_search_right(left, right, check):
     return right
 
 def genetic_sequences():
-    def check(x):
+    def check(l):
         def find_neighbors(node, x):
             left = right = None
             while node:
@@ -200,9 +200,8 @@ def genetic_sequences():
             return left, right
 
         i = rank[-S]
-        left, right = find_neighbors(versioned_bst[P-x+1], i)
-        return x <= max((rmq_lcp.query(left, i-1) if left is not None else 0),
-                        (rmq_lcp.query(i, right-1) if right is not None else 0))
+        left, right = find_neighbors(versioned_bst[P-l+1], i)
+        return max((rmq_lcp.query(left, i-1) if left is not None else 0), (rmq_lcp.query(i, right-1) if right is not None else 0)) >= l
 
     A, B, Q = list(input().strip().split())
     Q = int(Q)
