@@ -200,7 +200,7 @@ def genetic_sequences():
             return left, right
 
         i = rank[-S]
-        left, right = find_neighbors(versioned_bst[P-l+1], i)
+        left, right = find_neighbors(versioned_bst[P-l], i)
         return max((rmq_lcp.query(left, i-1) if left is not None else 0), (rmq_lcp.query(i, right-1) if right is not None else 0)) >= l
 
     A, B, Q = list(input().strip().split())
@@ -211,7 +211,7 @@ def genetic_sequences():
     lcp, rank = lcp_array(AB, p)
     rmq_lcp = SparseTable(lcp)
     pt = PersistentTreap()
-    versioned_bst = [pt.root]
+    versioned_bst = []
     for i in range(len(A)):
         pt.insert(rank[i])
         versioned_bst.append(pt.root)
