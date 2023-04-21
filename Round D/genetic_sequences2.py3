@@ -23,7 +23,6 @@ class PersistentTreap(object):
 
     def insert(self, key):
         self.root = self.__insert(self.root, key)
-        return self.root
 
     def delete(self, key):
         self.root = self.__delete(self.root, key)
