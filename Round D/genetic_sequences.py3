@@ -3,7 +3,7 @@
 # Google Code Jam Farewell Round D - Problem B. Genetic Sequences
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cadc77
 #
-# Time:  O((N + M) * log(N + M) + Q * logM * logN), pass in PyPy3 but Python3
+# Time:  O((N + M) * log(N + M) + Q * logM * logN), pass in PyPy3 (sometimes TLE) but Python3
 # Space: O((N + M) * log(N + M))
 #
 
