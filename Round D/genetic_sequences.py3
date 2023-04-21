@@ -193,8 +193,7 @@ def genetic_sequences():
                     right = node.key
                     node = node.left
                 else:
-                    if x > node.key:
-                        left = node.key
+                    left = node.key
                     node = node.right
             return left, right
 
