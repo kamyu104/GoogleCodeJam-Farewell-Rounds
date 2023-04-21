@@ -7,6 +7,75 @@
 # Space: O((N + M) * log(N + M))
 #
 
+from random import seed, random
+from copy import copy
+
+class TreapNode(object):
+    def __init__(self, key):
+        self.key = key
+        self.prior = random()
+        self.left = None
+        self.right = None
+
+class PersistentTreap(object):
+    def __init__(self):
+        self.root = None
+
+    def insert(self, key):
+        self.root = self.__insert(self.root, key)
+
+    def delete(self, key):
+        self.root = self.__delete(self.root, key)
+
+    def __insert(self, x, key):
+        if not x:
+            return TreapNode(key)
+        y = copy(x)
+        if key < y.key:
+            y.left = self.__insert(y.left, key)
+            if y.left.prior < y.prior:
+                return self.__rotate_left(y)
+        elif y.key < key:
+            y.right = self.__insert(y.right, key)
+            if y.right.prior < y.prior:
+                return self.__rotate_right(y)
+        return y
+
+    def __delete(self, x, key):
+        y = copy(x)
+        if key < y.key:
+            y.left = self.__delete(y.left, key)
+        elif y.key < key:
+            y.right = self.__delete(y.right, key)
+        else:
+            return self.__delete_node(y)
+        return y
+
+    def __delete_node(self, x):
+        if x.left and x.right:
+            if x.left.prior < x.right.prior:
+                x.left = copy(x.left)
+                y = self.__rotate_left(x)
+                y.right = self.__delete_node(x)
+            else:
+                x.right = copy(x.right)
+                y = self.__rotate_right(x)
+                y.left = self.__delete_node(x)
+            return y
+        return x.right if x.right else x.left
+
+    def __rotate_left(self, x):
+        y = x.left
+        x.left = y.right
+        y.right = x
+        return y
+
+    def __rotate_right(self, x):
+        y = x.right
+        x.right = y.left
+        y.left = x
+        return y
+
 def log2_floor(x):  # assumed x >= 1
     return x.bit_length()-1
 
@@ -106,15 +175,6 @@ class SparseTable(object):
         i = log2_floor(R-L+1)
         return min(self.st[i][L], self.st[i][R-(1<<i)+1])
 
-def binary_search(left, right, check):
-    while left <= right:
-        mid = left + (right-left)//2
-        if check(mid):
-            right = mid-1
-        else:
-            left = mid+1
-    return left
-
 def binary_search_right(left, right, check):
     while left <= right:
         mid = left + (right-left)//2
@@ -126,13 +186,21 @@ def binary_search_right(left, right, check):
 
 def genetic_sequences():
     def check(l):
+        def find_neighbors(node, x):
+            left = right = None
+            while node:
+                if x < node.key:
+                    right = node.key
+                    node = node.left
+                else:
+                    if x > node.key:
+                        left = node.key
+                    node = node.right
+            return left, right
+
         i = rank[-S]
-        idx = binary_search(0, len(sorted_A_ranks)-1, lambda x: sorted_A_ranks[x] >= i)
-        prev = binary_search(0, idx-1, lambda x: rmq_lcp.query(sorted_A_ranks[x], i-1) >= l)
-        left = sorted_A_ranks[prev] if prev <= idx-1 else i
-        nxt = binary_search_right(idx, len(sorted_A_ranks)-1, lambda x: rmq_lcp.query(i, sorted_A_ranks[x]-1) >= l)
-        right = sorted_A_ranks[nxt] if nxt >= idx else i
-        return (P-1)-rmq_p.query(left, right)+1 >= l
+        left, right = find_neighbors(versioned_bst[P-l], i)
+        return max((rmq_lcp.query(left, i-1) if left is not None else 0), (rmq_lcp.query(i, right-1) if right is not None else 0)) >= l
 
     A, B, Q = list(input().strip().split())
     Q = int(Q)
@@ -140,12 +208,17 @@ def genetic_sequences():
     AB = A+B
     p = suffix_array(AB)
     lcp, rank = lcp_array(AB, p)
-    rmq_lcp, rmq_p = SparseTable(lcp), SparseTable(p)
-    sorted_A_ranks = sorted(rank[i] for i in range(len(A)))
+    rmq_lcp = SparseTable(lcp)
+    pt = PersistentTreap()
+    versioned_bst = []
+    for i in range(len(A)):
+        pt.insert(rank[i])
+        versioned_bst.append(pt.root)
     result = [0]*Q
     for i, (P, S) in enumerate(P_S):
         result[i] = binary_search_right(1, min(P, S), check)
     return " ".join(map(str, result))
 
+seed(0)
 for case in range(int(input())):
     print('Case #%d: %s' % (case+1, genetic_sequences()))
