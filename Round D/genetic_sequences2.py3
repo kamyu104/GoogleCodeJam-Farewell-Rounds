@@ -27,7 +27,6 @@ class PersistentTreap(object):
 
     def delete(self, key):
         self.root = self.__delete(self.root, key)
-        return self.root
 
     def __insert(self, x, key):
         if not x:
@@ -212,7 +211,10 @@ def genetic_sequences():
     lcp, rank = lcp_array(AB, p)
     rmq_lcp = SparseTable(lcp)
     pt = PersistentTreap()
-    versioned_bst = [pt.insert(rank[i]) for i in range(len(A))]
+    versioned_bst = []
+    for i in range(len(A)):
+        pt.insert(rank[i])
+        versioned_bst.append(pt.root)
     result = [0]*Q
     for i, (P, S) in enumerate(P_S):
         result[i] = binary_search_right(1, min(P, S), check)
