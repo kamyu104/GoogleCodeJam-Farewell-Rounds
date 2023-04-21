@@ -3,9 +3,11 @@
 # Google Code Jam Farewell Round D - Problem B. Genetic Sequences
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cadc77
 #
-# Time:  O((N + M) * log(N + M) + Q * logM * log(M + N)), pass in PyPy3 but Python3
+# Time:  O((N + M) * log(N + M) + Q * logM * logN), pass in PyPy3 but Python3
 # Space: O((N + M) * log(N + M))
 #
+
+from bisect import bisect_left
 
 def log2_floor(x):  # assumed x >= 1
     return x.bit_length()-1
@@ -127,8 +129,11 @@ def binary_search_right(left, right, check):
 def genetic_sequences():
     def check(l):
         i = rank[-S]
-        left = binary_search(0, i-1, lambda x: rmq_lcp.query(x, i-1) >= l)
-        right = binary_search_right(i+1, len(p)-1, lambda x: rmq_lcp.query(i, x-1) >= l)
+        idx = bisect_left(sorted_A_ranks, i)
+        it = binary_search(0, idx-1, lambda x: rmq_lcp.query(sorted_A_ranks[x], i-1) >= l)
+        left = sorted_A_ranks[it] if it <= idx-1 else i
+        it = binary_search_right(idx, len(sorted_A_ranks)-1, lambda x: rmq_lcp.query(i, sorted_A_ranks[x]-1) >= l)
+        right = sorted_A_ranks[it] if it >= idx else i
         return (P-1)-rmq_p.query(left, right)+1 >= l
 
     A, B, Q = list(input().strip().split())
@@ -138,6 +143,7 @@ def genetic_sequences():
     p = suffix_array(AB)
     lcp, rank = lcp_array(AB, p)
     rmq_lcp, rmq_p = SparseTable(lcp), SparseTable(p)
+    sorted_A_ranks = sorted(rank[i] for i in range(len(A)))
     result = [0]*Q
     for i, (P, S) in enumerate(P_S):
         result[i] = binary_search_right(0, S, check)
