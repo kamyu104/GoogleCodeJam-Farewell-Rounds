@@ -210,7 +210,7 @@ def genetic_sequences():
     AB = A+B
     p = suffix_array(AB)
     lcp, rank = lcp_array(AB, p)
-    rmq_lcp =  SparseTable(lcp)
+    rmq_lcp = SparseTable(lcp)
     pt = PersistentTreap()
     versioned_bst = [pt.root]
     for i in range(len(A)):
