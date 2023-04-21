@@ -128,10 +128,10 @@ def genetic_sequences():
     def check(l):
         i = rank[-S]
         idx = binary_search(0, len(sorted_A_ranks)-1, lambda x: sorted_A_ranks[x] >= i)
-        it = binary_search(0, idx-1, lambda x: rmq_lcp.query(sorted_A_ranks[x], i-1) >= l)
-        left = sorted_A_ranks[it] if it <= idx-1 else i
-        it = binary_search_right(idx, len(sorted_A_ranks)-1, lambda x: rmq_lcp.query(i, sorted_A_ranks[x]-1) >= l)
-        right = sorted_A_ranks[it] if it >= idx else i
+        prev = binary_search(0, idx-1, lambda x: rmq_lcp.query(sorted_A_ranks[x], i-1) >= l)
+        left = sorted_A_ranks[prev] if prev <= idx-1 else i
+        nxt = binary_search_right(idx, len(sorted_A_ranks)-1, lambda x: rmq_lcp.query(i, sorted_A_ranks[x]-1) >= l)
+        right = sorted_A_ranks[nxt] if nxt >= idx else i
         return (P-1)-rmq_p.query(left, right)+1 >= l
 
     A, B, Q = list(input().strip().split())
