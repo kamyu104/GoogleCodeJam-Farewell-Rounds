@@ -144,7 +144,7 @@ def genetic_sequences():
     sorted_A_ranks = sorted(rank[i] for i in range(len(A)))
     result = [0]*Q
     for i, (P, S) in enumerate(P_S):
-        result[i] = binary_search_right(0, S, check)
+        result[i] = binary_search_right(0, min(P, S), check)
     return " ".join(map(str, result))
 
 for case in range(int(input())):
