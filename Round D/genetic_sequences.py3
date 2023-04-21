@@ -125,11 +125,11 @@ def binary_search_right(left, right, check):
     return right
 
 def genetic_sequences():
-    def check(x):
-        b = rank[-S]
-        left = binary_search(0, b-1, lambda i: rmq_lcp.query(i, b-1) >= x)
-        right = binary_search_right(b+1, len(p)-1, lambda i: rmq_lcp.query(b, i-1) >= x)
-        return x <= (P-1)-rmq_p.query(left, right)+1
+    def check(l):
+        i = rank[-S]
+        left = binary_search(0, i-1, lambda x: rmq_lcp.query(x, i-1) >= l)
+        right = binary_search_right(i+1, len(p)-1, lambda x: rmq_lcp.query(i, x-1) >= l)
+        return (P-1)-rmq_p.query(left, right)+1 >= l
 
     A, B, Q = list(input().strip().split())
     Q = int(Q)
