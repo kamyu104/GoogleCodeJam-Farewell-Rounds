@@ -64,8 +64,7 @@ def hey_google_drive():
             for i, j in reachables:
                 if 'a' <= G[i][j] <= 'z':
                     result.add((G[i][j], G[r][c]))
-    result = [c1+c2 for c1 in ascii_lowercase for c2 in ascii_uppercase if (c1, c2) in result]
-    return " ".join(result) if result else "NONE"
+    return " ".join(c1+c2 for c1 in ascii_lowercase for c2 in ascii_uppercase if (c1, c2) in result) if result else "NONE"
 
 for case in range(int(input())):
     print('Case #%d: %s' % (case+1, hey_google_drive()))
