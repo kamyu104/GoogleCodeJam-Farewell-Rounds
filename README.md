@@ -61,7 +61,7 @@
 | # | Title | Solution | Time | Space | Difficulty | Tag | Note |
 |---| ----- | -------- | ---- | ----- | ---------- | --- | ---- |
 |A| [Indispensable Overpass](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cadc76)| [Python3](./Round%20D/indispensable_overpass.py3) | _O(W + E + C)_ | _O(W + E)_  | Easy | | Tree DP, Combinatorics |
-|B| [Genetic Sequences](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cadc77)| [PyPy3](./Round%20D/genetic_sequences.py3) [PyPy3](./Round%20D/genetic_sequences2.py3) | _O((N + M) * log(N + M) + Q * logM * logN)_ | _O((N + M) * log(N + M))_ | Medium | | Suffix Array, LCP Array, Binary Search, RMQ, Sparse Table, Persistent BST, Persistent Treap |
+|B| [Genetic Sequences](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cadc77)| [PyPy3](./Round%20D/genetic_sequences.py3) [PyPy3](./Round%20D/genetic_sequences2.py3) | _O((N + M) * log(N + M) + Q * log(min(N, M)) * logN)_ | _O((N + M) * log(N + M))_ | Medium | | Suffix Array, LCP Array, Binary Search, RMQ, Sparse Table, Persistent BST, Persistent Treap |
 |C| [Hey Google, Drive!](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000caccfa)| | | | | | |
 |D| [Old Gold](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cada3b)| | | | | | |
 |E| [Ring-Preserving Networks](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cad08a)| | | | | | |
