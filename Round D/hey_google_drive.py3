@@ -25,7 +25,7 @@ def hey_google_drive():
                 (not j+2 < C or curr[i][j+2] != '*')):
                 lookup[i][j+1] = True
                 q.append((i, j+1))
-            if (0 <= i-1 < R and not lookup[i-1][j] and curr[i-1][j] == '.' and
+            if (0 <= i-1 and not lookup[i-1][j] and curr[i-1][j] == '.' and
                 (not 0 <= i-2 or curr[i-2][j] != '*')):
                 lookup[i-1][j] = True
                 q.append((i-1, j))
