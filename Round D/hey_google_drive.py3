@@ -41,7 +41,7 @@ def hey_google_drive():
     result = set()
     for r in range(R):
         for c in range(C):
-            if not 'A' <= G[r][c] <= 'Z':
+            if not G[r][c].isupper():
                 continue
             curr = [[G[i][j] if G[i][j] in '#*' else '.' for j in range(C)] for i in range(R)]
             reachables, new_reachables = [], [(i, j) for i in range(R) for j in range(C) if curr[i][j] not in '#*']
@@ -52,7 +52,7 @@ def hey_google_drive():
                 reachables = new_reachables
                 lookup, new_reachables = bfs()
             for i, j in reachables:
-                if 'a' <= G[i][j] <= 'z':
+                if G[i][j].islower():
                     result.add((G[i][j], G[r][c]))
     return " ".join(c1+c2 for c1 in ascii_lowercase for c2 in ascii_uppercase if (c1, c2) in result) if result else "NONE"
 
