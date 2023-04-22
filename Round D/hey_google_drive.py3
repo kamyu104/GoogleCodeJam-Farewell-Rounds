@@ -7,8 +7,6 @@
 # Space: O(R * C)
 #
 
-from string import ascii_lowercase, ascii_uppercase
-
 def hey_google_drive():
     def bfs():
         lookup = [[False]*C for _ in range(R)]
@@ -38,7 +36,7 @@ def hey_google_drive():
 
     R, C = list(map(int, input().strip().split()))
     G = [list(input().strip()) for _ in range(R)]
-    result = set()
+    result = []
     for r in range(R):
         for c in range(C):
             if not G[r][c].isupper():
@@ -53,8 +51,9 @@ def hey_google_drive():
                 lookup, new_reachables = bfs()
             for i, j in reachables:
                 if G[i][j].islower():
-                    result.add((G[i][j], G[r][c]))
-    return " ".join(c1+c2 for c1 in ascii_lowercase for c2 in ascii_uppercase if (c1, c2) in result) if result else "NONE"
+                    result.append(G[i][j]+G[r][c])
+    result.sort()
+    return " ".join(result) if result else "NONE"
 
 for case in range(int(input())):
     print('Case #%d: %s' % (case+1, hey_google_drive()))
