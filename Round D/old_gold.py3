@@ -31,7 +31,7 @@ def old_gold():
                 j = i-2*(i-lookup['='])
                 if j >= left and prev_prev_eq < j and prev_gt[lookup['=']] < j:
                     dp = (dp+(prefix[j+1]-prefix[j]))%MOD
-                left = lookup['=']
+                left = lookup['=']+1
             j = i
             while j > left:  # Time: O(logN)
                 last_gt = prev_gt[j]
@@ -44,7 +44,7 @@ def old_gold():
         lookup[c] = i
         if c not in ">.":
             can_be_the_first = False
-    return (prefix[-1]-prefix[max(lookup['o'], lookup['>'], lookup['='], 0)])%MOD
+    return (prefix[-1]-prefix[max(lookup['o'], lookup['>']+1, lookup['=']+1)])%MOD
 
 MOD = 10**9+7
 for case in range(int(input())):
