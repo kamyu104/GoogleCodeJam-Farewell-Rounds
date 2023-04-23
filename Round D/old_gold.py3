@@ -10,14 +10,15 @@
 def old_gold():
     S = input().strip()
     lookup = {c:-1 for c in "<=>o."}
-    prev_eq, prev_gt, next_gt = [], [], []
+    prev_eq, prev_gt, next_gt = [[-1]*len(S) for _ in range(3)]
     can_be_the_first = True
     prefix = [0]*(len(S)+1)
     for i, c in enumerate(S):
-        prev_eq.append(lookup['='])
-        prev_gt.append(lookup['>'])
+        prev_eq[i] = lookup['=']
+        prev_gt[i] = lookup['>']
         if c == '>':
-            next_gt.extend([i]*(i-lookup['>']))
+            for j in range(lookup['>']+1, i+1):
+                next_gt[j] = i
         dp = 0
         if c in "o.":
             dp = (dp+can_be_the_first)%MOD
