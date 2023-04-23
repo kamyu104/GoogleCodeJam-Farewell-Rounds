@@ -27,7 +27,7 @@ def old_gold():
         elif c in "o.":
             dp = (dp+can_be_the_first)%MOD
             left = max(lookup['o'], i-2*(i-lookup['<'])+1)
-            if lookup['='] > left:
+            if lookup['='] >= left:
                 j = i-2*(i-lookup['='])
                 if j >= left and prev_prev_eq < j and prev_gt[lookup['=']] < j:
                     dp = (dp+(prefix[j+1]-prefix[j]))%MOD
