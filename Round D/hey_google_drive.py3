@@ -15,6 +15,7 @@ def hey_google_drive():
         idx = 0
         while idx < len(q):
             i, j = q[idx]
+            # hardcode each direction to improve performance
             if (i+1 < R and not lookup[i+1][j] and curr[i+1][j] == '.' and
                 (not i+2 < R or curr[i+2][j] != '*')):
                 lookup[i+1][j] = True
