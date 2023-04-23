@@ -3,7 +3,7 @@
 # Google Code Jam Farewell Round D - Problem D. Old Gold
 # https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cada3b
 #
-# Time:  O(NlogN)
+# Time:  O(NlogN), pass in PyPy3 but Python3
 # Space: O(N)
 #
 
