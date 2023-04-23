@@ -17,7 +17,6 @@ def old_gold():
     can_be_the_first = True
     prefix = [0]*(len(S)+1)
     for i, c in enumerate(S):
-        prev_gt[i] = lookup['>']
         dp = 0
         if c == '=':
             prev_prev_eq = lookup['=']
@@ -32,16 +31,17 @@ def old_gold():
                 if j >= left and prev_prev_eq < j and prev_gt[lookup['=']] < j:
                     dp = (dp+(prefix[j+1]-prefix[j]))%MOD
                 left = lookup['=']+1
-            j = i
-            while j > left:  # Time: O(logN)
+            j = i-1
+            while j >= left:  # Time: O(logN)
                 last_gt = prev_gt[j]
-                dp = (dp+(prefix[j]-prefix[max(last_gt, left)]))%MOD
-                j = i-2*(i-last_gt)
-                while j > left and next_gt[j] != last_gt:
+                dp = (dp+(prefix[j+1]-prefix[max(last_gt, left)]))%MOD
+                j = i-2*(i-last_gt)-1
+                while j >= left and next_gt[j] != last_gt:
                     last_gt = next_gt[j]
-                    j = i-2*(i-last_gt)
+                    j = i-2*(i-last_gt)-1
         prefix[i+1] = (prefix[i]+dp)%MOD
         lookup[c] = i
+        prev_gt[i] = lookup['>']
         if c not in ">.":
             can_be_the_first = False
     return (prefix[-1]-prefix[max(lookup['=']+1, lookup['>']+1, lookup['o'])])%MOD
