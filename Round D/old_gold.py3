@@ -39,7 +39,7 @@ def old_gold():
         lookup[c] = i
         if c not in ">.":
             can_be_the_first = False
-    return (prefix[len(S)]-prefix[max(lookup['o'], lookup['>'], lookup['='], 0)])%MOD
+    return (prefix[-1]-prefix[max(lookup['o'], lookup['>'], lookup['='], 0)])%MOD
 
 MOD = 10**9+7
 for case in range(int(input())):
