@@ -28,7 +28,7 @@ def old_gold():
             left = max(lookup['o'], i-2*(i-lookup['<'])+1)
             if lookup['='] >= left:
                 j = i-2*(i-lookup['='])
-                if j >= left and prev_prev_eq < j and prev_gt[lookup['=']] < j:
+                if j >= max(left, prev_prev_eq+1, prev_gt[lookup['=']]+1):
                     dp = (dp+(prefix[j+1]-prefix[j]))%MOD
                 left = lookup['=']+1
             j = i-1
