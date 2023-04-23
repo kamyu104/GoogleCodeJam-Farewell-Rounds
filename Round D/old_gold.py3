@@ -10,11 +10,13 @@
 def old_gold():
     S = input().strip()
     lookup = {c:-1 for c in "<=>o."}
-    prev_eq, prev_gt, next_gt = [[-1]*len(S) for _ in range(3)]
+    prev_prev_eq = -1
+    prev_gt, next_gt = [[-1]*len(S) for _ in range(2)]
     can_be_the_first = True
     prefix = [0]*(len(S)+1)
     for i, c in enumerate(S):
-        prev_eq[i] = lookup['=']
+        if c == '=':
+            prev_prev_eq = lookup['=']
         prev_gt[i] = lookup['>']
         if c == '>':
             for j in range(lookup['>']+1, i+1):
@@ -25,7 +27,7 @@ def old_gold():
             left = max(lookup['o'], i-2*(i-lookup['<'])+1)
             if lookup['='] > left:
                 j = i-2*(i-lookup['='])
-                if j >= left and prev_eq[lookup['=']] < j and prev_gt[lookup['=']] < j:
+                if j >= left and prev_prev_eq < j and prev_gt[lookup['=']] < j:
                     dp = (dp+(prefix[j+1]-prefix[j]))%MOD
                 left = lookup['=']
             j = i
