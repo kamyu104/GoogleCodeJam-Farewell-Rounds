@@ -33,12 +33,10 @@ def old_gold():
                 left = lookup['=']+1
             j = i-1
             while j >= left:  # Time: O(logN)
-                last_gt = prev_gt[j]
-                dp = (dp+(prefix[j+1]-prefix[max(last_gt, left)]))%MOD
-                j = i-2*(i-last_gt)-1
-                while j >= left and next_gt[j] != last_gt:
-                    last_gt = next_gt[j]
-                    j = i-2*(i-last_gt)-1
+                dp = (dp+(prefix[j+1]-prefix[max(prev_gt[j], left)]))%MOD
+                j = i-2*(i-prev_gt[j])-1
+                while j >= left and next_gt[j] != ((j+1)+i)//2:
+                    j = i-2*(i-next_gt[j])-1
         prefix[i+1] = (prefix[i]+dp)%MOD
         lookup[c] = i
         prev_gt[i] = lookup['>']
