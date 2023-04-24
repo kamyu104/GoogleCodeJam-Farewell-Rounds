@@ -14,8 +14,7 @@ def ring_preserving_networks():
         A_B = [(i, i+1) for i in range(C-1)]
         A_B.append((0, C-1))
         it = ((j, i) for i in range(2, C) for j in reversed(range(i-1)))
-        for _ in range(L-len(A_B)):
-            A_B.append(next(it))
+        A_B.extend(next(it) for _ in range(L-len(A_B)))
         print("\n".join(map(lambda x: " ".join(map(lambda i: str(i+1), x)), A_B)), flush=True)
 
     def give_ring():
