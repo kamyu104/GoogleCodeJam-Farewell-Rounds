@@ -11,8 +11,7 @@
 
 def ring_preserving_networks():
     def design():
-        A_B = [(i, i+1) for i in range(C-1)]
-        A_B.append((0, C-1))
+        A_B = [(i, (i+1)%C) for i in range(C)]
         it = ((j, i) for i in range(2, C) for j in reversed(range(i-1)))
         A_B.extend(next(it) for _ in range(L-len(A_B)))
         return "\n".join(map(lambda x: " ".join(map(lambda i: str(i+1), x)), A_B))
