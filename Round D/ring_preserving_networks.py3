@@ -23,30 +23,27 @@ def ring_preserving_networks():
             adj[u].append(v)
             adj[v].append(u)
         u = min(range(C), key=lambda x: len(adj[x]))
-        result = [0]*C
+        result = [-1]*C
         result[0], result[1], result[-1] = u, adj[u][0], adj[u][1]
         lookup = [False]*C
         lookup[result[0]] = lookup[result[1]] = lookup[result[-1]] = True
         left, right = 1, C-1
         while left <= right:
             if len(adj[result[left]]) < len(adj[result[right]]):
-                while adj[result[left]]:
-                    u = adj[result[left]].pop()
-                    if lookup[u]:
-                        continue
-                    lookup[u] = True
-                    result[left+1] = u
-                    break
+                u = result[left]
                 left += 1
+                curr = left
             else:
-                while adj[result[right]]:
-                    u = adj[result[right]].pop()
-                    if lookup[u]:
-                        continue
-                    lookup[u] = True
-                    result[right-1] = u
-                    break
+                u = result[right]
                 right -= 1
+                curr = right
+            while adj[u]:
+                v = adj[u].pop()
+                if lookup[v]:
+                    continue
+                lookup[v] = True
+                result[curr] = v
+                break
         return " ".join(map(lambda i: str(i+1), result))
 
     C, L = list(map(int, input().strip().split()))
