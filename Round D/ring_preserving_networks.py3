@@ -22,13 +22,11 @@ def ring_preserving_networks():
     for u, v in U_V:
         adj[u].append(v)
         adj[v].append(u)
-    for u in range(C):
-        adj[u].reverse()
     u = min(range(C), key=lambda x: len(adj[x]))
     result = [0]*C
-    result[0], result[-1], result[1] = u, adj[u][-1], adj[u][-2]
+    result[0], result[1], result[-1] = u, adj[u][0], adj[u][1]
     lookup = [False]*C
-    lookup[result[0]] = lookup[result[-1]] = lookup[result[1]] = True
+    lookup[result[0]] = lookup[result[1]] = lookup[result[-1]] = True
     left, right = 1, C-1
     while left <= right:
         if len(adj[result[left]]) < len(adj[result[right]]):
