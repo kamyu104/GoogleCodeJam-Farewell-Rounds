@@ -28,7 +28,7 @@ def ring_preserving_networks():
         lookup = [False]*C
         lookup[result[0]] = lookup[result[1]] = lookup[result[-1]] = True
         left, right = 1, C-1
-        while left <= right:
+        while (right-1)-(left+1)+1:
             if len(adj[result[left]]) < len(adj[result[right]]):
                 u = result[left]
                 left += 1
@@ -37,12 +37,8 @@ def ring_preserving_networks():
                 u = result[right]
                 right -= 1
                 curr = right
-            for v in adj[u]:
-                if lookup[v]:
-                    continue
-                lookup[v] = True
-                result[curr] = v
-                break
+            result[curr] = next(v for v in adj[u] if not lookup[v])
+            lookup[result[curr]] = True
         return " ".join(map(lambda i: str(i+1), result))
 
     C, L = list(map(int, input().strip().split()))
