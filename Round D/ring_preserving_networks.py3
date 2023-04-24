@@ -32,17 +32,18 @@ def ring_preserving_networks():
             if len(adj[result[left]]) < len(adj[result[right]]):
                 u = result[left]
                 left += 1
-                curr = left
             else:
                 u = result[right]
                 right -= 1
-                curr = right
             while adj[u]:
                 v = adj[u].pop()
                 if lookup[v]:
                     continue
                 lookup[v] = True
-                result[curr] = v
+                if result[left] == -1:
+                    result[left] = v
+                else:
+                    result[right] = v
                 break
         return " ".join(map(lambda i: str(i+1), result))
 
