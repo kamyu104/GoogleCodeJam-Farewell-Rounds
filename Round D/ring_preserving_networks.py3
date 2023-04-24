@@ -37,8 +37,7 @@ def ring_preserving_networks():
                 u = result[right]
                 right -= 1
                 curr = right
-            while adj[u]:
-                v = adj[u].pop()
+            for v in adj[u]:
                 if lookup[v]:
                     continue
                 lookup[v] = True
