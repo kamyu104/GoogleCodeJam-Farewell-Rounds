@@ -30,15 +30,13 @@ def ring_preserving_networks():
         left, right = 1, C-1
         for _ in range(C-3):
             if len(adj[result[left]]) < len(adj[result[right]]):
-                u = result[left]
+                result[left+1] = next(v for v in adj[result[left]] if not lookup[v])
+                lookup[result[left+1]] = True
                 left += 1
-                curr = left
             else:
-                u = result[right]
+                result[right-1] = next(v for v in adj[result[right]] if not lookup[v])
+                lookup[result[right-1]] = True
                 right -= 1
-                curr = right
-            result[curr] = next(v for v in adj[u] if not lookup[v])
-            lookup[result[curr]] = True
         return " ".join(map(lambda i: str(i+1), result))
 
     C, L = list(map(int, input().strip().split()))
