@@ -2,7 +2,7 @@
 
 ![Language](https://img.shields.io/badge/language-Python3-orange.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-![Progress](https://img.shields.io/badge/progress-19%20%2F%2020-ff69b4.svg)
+![Progress](https://img.shields.io/badge/progress-20%20%2F%2020-ff69b4.svg)
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=kamyu104.googlecodejam.farewell.rounds)
 
 * Python solutions of Google Code Jam Farewell Rounds. Solution begins with `*` means it will get TLE in the largest data set.
@@ -64,4 +64,4 @@
 |B| [Genetic Sequences](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cadc77)| [PyPy3](./Round%20D/genetic_sequences.py3) [PyPy3](./Round%20D/genetic_sequences2.py3) | _O((N + M) * log(N + M) + Q * log(min(N, M)) * logN)_ | _O((N + M) * log(N + M))_ | Medium | | Suffix Array, LCP Array, Binary Search, RMQ, Sparse Table, Persistent BST, Persistent Treap |
 |C| [Hey Google, Drive!](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000caccfa)| [PyPy3](./Round%20D/hey_google_drive.py3) | _O((R * C)^2 * F)_ | _O(R * C)_  | Hard | | Graph, BFS |
 |D| [Old Gold](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cada3b)| [PyPy3](./Round%20D/old_gold.py3) | _O(NlogN)_ | _O(N)_ | Medium | | Combinatorics, DP, Prefix Sum |
-|E| [Ring-Preserving Networks](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cad08a)| | | | | | |
+|E| [Ring-Preserving Networks](https://codingcompetitions.withgoogle.com/codejam/round/0000000000c95b95/0000000000cad08a)| [Python3](./Round%20D/ring_preserving_networks.py3) | _O(L * sqrt(L))_ | _O(L)_ | Medium | | Constructive Algorithms |
