@@ -18,7 +18,6 @@ def ring_preserving_networks():
         print("\n".join(map(lambda x: " ".join(map(lambda i: str(i+1), x)), A_B)), flush=True)
 
     def give_ring():
-        U_V = [list(map(lambda x: int(x)-1, input().strip().split())) for _ in range(L)]
         adj = [[] for _ in range(C)]
         for u, v in U_V:
             adj[u].append(v)
@@ -52,6 +51,7 @@ def ring_preserving_networks():
 
     C, L = list(map(int, input().strip().split()))
     give_design()
+    U_V = [list(map(lambda x: int(x)-1, input().strip().split())) for _ in range(L)]
     give_ring() 
 
 for case in range(int(input())):
