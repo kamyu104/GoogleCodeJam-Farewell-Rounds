@@ -9,7 +9,7 @@
 * Total computation amount > `10^8` is not friendly for Python to solve in 5 ~ 15 seconds.
 * A problem was marked as `Very Hard` means that it was an unsolved one during the contest and may not be that difficult.
 
-## Farewell Rounds
+## Rounds
 
 * [Kick Start 2022](https://github.com/kamyu104/GoogleKickStart-2022)
 * [Code Jam 2022](https://github.com/kamyu104/GoogleCodeJam-2022)
